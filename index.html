@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="shortcut icon" type="image/x-icon" href="image/favicon.png">
+  <title>Plinko</title>
+  <link rel="stylesheet" href="assets/plinko.css">
+</head>
+
+<body>
+  <div class="game-viewport">
+    <div class="game-wrapper">
+      <div class="game">
+
+        <!-- HEADER -->
+        <div class="game-header-wrapper">
+          <div class="game-header">
+            <span class="hdr-logo">PLINKO</span>
+            <div class="hdr-sep"></div>
+            <div class="hdr-balance">
+              <span class="hdr-balance-amt" id="balanceDisplay">3,000.00</span>
+              <span class="hdr-balance-cur">USD</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="game-body">
+          <div class="plinko-wrapper">
+
+            <!-- PLINKO HEADER: pins + history + max win -->
+            <div class="plinko-header">
+              <div class="pins-block">
+                <span class="pins-lbl">Pins:</span>
+                <div class="pins-wrap">
+                  <button class="pins-btn" id="pinsBtn">
+                    <span id="pinsBtnLbl">14</span>
+                    <div class="pins-arr"></div>
+                  </button>
+                  <div class="pins-menu" id="pinsMenu">
+                    <div class="pins-item" data-val="12">12</div>
+                    <div class="pins-item" data-val="14">14</div>
+                    <div class="pins-item" data-val="16">16</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="history-wrap">
+                <div class="hist-items" id="histItems"></div>
+              </div>
+
+              <div class="max-win-block">
+                Max win: <span class="max-win-val" id="maxWinVal">353x</span>
+              </div>
+            </div>
+
+            <!-- CANVAS + MULTIPLIERS -->
+            <div class="plinko-game-container">
+              <div class="plinko-game">
+                <div class="canvas-wrap">
+                  <canvas id="plinkoCanvas"></canvas>
+                  <div class="win-flash" id="winFlash"></div>
+                </div>
+
+                <div class="plinko-footer">
+                  <div class="slots-row" id="row0"></div>
+                  <div class="slots-row" id="row1"></div>
+                  <div class="slots-row" id="row2"></div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="game-footer-wrapper">
+          <div class="game-footer">
+            <div class="bet-area">
+              <div class="bet-pill">
+                <div class="bet-pill-lbl">Bet USD</div>
+                <div class="bet-pill-val" id="betDisplay">10.00</div>
+              </div>
+              <button class="btn-small" id="btnMinus">
+                <img src="image/icon-minus.svg" alt="-">
+              </button>
+              <button class="btn-stack" id="btnStack" title="Quick bets"></button>
+              <button class="btn-small" id="btnPlus">
+                <img src="image/icon-plus.svg" alt="+">
+              </button>
+              <button class="btn-autoplay" id="btnAuto" title="Play"></button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- POPUP -->
+  <div class="popup" id="ctaOverlay">
+    <div class="popup__overlay"></div>
+    <canvas class="confetti-canvas" id="confettiCanvas"></canvas>
+    <div class="popup__content">
+      <div class="popup__inner">
+        <h2 class="popup__title">Congratulations!</h2>
+        <p class="popup__text">Ready to continue playing?</p>
+        <a href="https://www.google.com/" class="cta-button">Download Now</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/confetti.js"></script>
+  <script src="assets/plinko.js"></script>
+</body>
+
+</html>
