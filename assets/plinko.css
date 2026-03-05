@@ -114,11 +114,11 @@ body {
   }
 }
 
-/* Landscape на мобільних */
-@media (max-width: 767.98px) and (orientation: landscape) {
+/* Mobile landscape */
+@media (max-width: 991.98px) and (orientation: landscape) {
   :root {
     --hH: 28px;
-    --fH: 70px;
+    --fH: 48px;
   }
 }
 
@@ -452,26 +452,85 @@ body {
   z-index: 2;
 }
 
-/* Landscape на мобільних */
-@media (max-width: 767.98px) and (orientation: landscape) {
+/* Mobile landscape */
+@media (max-width: 991.98px) and (orientation: landscape) {
+  /* Header — top, like desktop */
+  .game-header-wrapper {
+    top: 0;
+    bottom: auto;
+    height: var(--hH);
+    padding: 2px 2px 0;
+  }
+
+  .game-header {
+    background: rgba(0, 0, 0, .3) !important;
+  }
+
+  /* Body — between header and footer */
+  .game-body {
+    top: var(--hH);
+    bottom: var(--fH);
+  }
+
+  /* Footer — at bottom, no header offset needed */
+  .game-footer-wrapper {
+    bottom: 0;
+    padding-bottom: 2px;
+  }
+
+  /* Slots rows — compact */
+  .plinko-footer {
+    padding: 1px 6px 2px;
+    gap: 1px;
+  }
+
+  .slots-row {
+    gap: 1px;
+  }
+
+  .sv {
+    height: 18px;
+    font-size: 8px;
+    border-radius: 4px;
+  }
+
+  /* Footer elements */
   .bet-pill {
-    height: 38px;
-    min-width: 110px;
+    height: 34px;
+    min-width: 100px;
+  }
+
+  .bet-pill-lbl {
+    font-size: 9px;
+    margin-bottom: 2px;
   }
 
   .bet-pill-val {
-    font-size: 15px;
+    font-size: 14px;
   }
 
   .btn-autoplay {
-    width: 42px;
-    height: 42px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .btn-autoplay::after {
+    background-size: 18px;
   }
 
   .btn-small,
   .btn-stack {
-    width: 30px;
-    height: 30px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .btn-small img {
+    width: 12px;
+    height: 12px;
+  }
+
+  .bet-area {
+    gap: 5px;
   }
 }
 
