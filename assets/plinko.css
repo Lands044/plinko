@@ -114,6 +114,14 @@ body {
   }
 }
 
+/* Landscape на мобільних */
+@media (max-width: 767.98px) and (orientation: landscape) {
+  :root {
+    --hH: 28px;
+    --fH: 70px;
+  }
+}
+
 /* ── HEADER ── */
 .game-header-wrapper {
   position: absolute;
@@ -442,6 +450,29 @@ body {
   box-shadow: 0 0 14px currentColor;
   filter: brightness(1.5);
   z-index: 2;
+}
+
+/* Landscape на мобільних */
+@media (max-width: 767.98px) and (orientation: landscape) {
+  .bet-pill {
+    height: 38px;
+    min-width: 110px;
+  }
+
+  .bet-pill-val {
+    font-size: 15px;
+  }
+
+  .btn-autoplay {
+    width: 42px;
+    height: 42px;
+  }
+
+  .btn-small,
+  .btn-stack {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 /* ── FOOTER ── */
