@@ -376,7 +376,31 @@
 
   function showCTA() {
     ctaOverlay.classList.add('show');
-    if (typeof ConfettiStart === 'function') ConfettiStart();
+    if (typeof confetti !== 'function') return;
+
+    // Create a canvas positioned between popup overlay and popup content
+    const confettiCanvas = document.createElement('canvas');
+    confettiCanvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1000;';
+    ctaOverlay.insertBefore(confettiCanvas, ctaOverlay.querySelector('.popup__content'));
+
+    const myConfetti = confetti.create(confettiCanvas, { resize: true });
+    const duration = 4000;
+    const fadeOut  = 1500;
+    const count    = 4;
+    const end = Date.now() + duration;
+
+    (function frame() {
+      myConfetti({ particleCount: count, angle: 60,  spread: 55, origin: { x: 0, y: 0.6 } });
+      myConfetti({ particleCount: count, angle: 120, spread: 55, origin: { x: 1, y: 0.6 } });
+      if (Date.now() < end) {
+        requestAnimationFrame(frame);
+      } else {
+        // Плавне зникання canvas
+        confettiCanvas.style.transition = `opacity ${fadeOut}ms ease`;
+        confettiCanvas.style.opacity = '0';
+        setTimeout(() => confettiCanvas.remove(), fadeOut);
+      }
+    })();
   }
 
   function updateUI() {
