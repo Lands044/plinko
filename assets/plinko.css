@@ -454,28 +454,28 @@ body {
 
 /* Mobile landscape */
 @media (max-width: 991.98px) and (orientation: landscape) {
-  /* Header — top, like desktop */
+  /* Header — stays at bottom like portrait mobile */
   .game-header-wrapper {
-    top: 0;
-    bottom: auto;
+    top: auto;
+    bottom: 0;
     height: var(--hH);
-    padding: 2px 2px 0;
+    padding: 5px;
   }
 
   .game-header {
-    background: rgba(0, 0, 0, .3) !important;
+    background: none !important;
   }
 
-  /* Body — between header and footer */
+  /* Body — top:0, bottom accounts for footer + header */
   .game-body {
-    top: var(--hH);
-    bottom: var(--fH);
+    top: 0;
+    bottom: calc(var(--fH) + var(--hH));
   }
 
-  /* Footer — at bottom, no header offset needed */
+  /* Footer — sits above header */
   .game-footer-wrapper {
-    bottom: 0;
-    padding-bottom: 2px;
+    bottom: var(--hH);
+    padding-bottom: 0;
   }
 
   /* Slots rows — compact */
