@@ -51,7 +51,7 @@
               </div>
 
               <div class="max-win-block">
-                Max win: <span class="max-win-val" id="maxWinVal">353x</span>
+                <span class="max-win-lbl">Max win:</span> <span class="max-win-val" id="maxWinVal">353x</span>
               </div>
             </div>
 
@@ -110,7 +110,11 @@
     </div>
   </div>
 
+  <!-- Runtime config: texts, payouts, timings and CTA come from config.json
+       (fetched on every load, no build step). See docs/config.md. -->
   <script src="assets/confetti.js"></script>
+  <script src="assets/config.js"></script>
+  <script src="assets/plinko.config.js"></script>
   <script src="assets/plinko.js"></script>
 </body>
 

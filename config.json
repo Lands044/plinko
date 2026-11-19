@@ -1,0 +1,35 @@
+{
+	"$comment": "Runtime config for this landing. Served as-is next to index.html and fetched on every page load, so editing it changes the landing WITHOUT any build. Anything omitted falls back to the built-in defaults in assets/plinko.config.js.",
+	"version": 1,
+	"game": {
+		"$comment": "balance/bet in game.currency. ctaAfterDrops = popup after this many drops. Multipliers, pin counts, ball speed and other timings are hardcoded in assets/plinko.js.",
+		"currency": "USD",
+		"balance": 3000,
+		"bet": {
+			"min": 10,
+			"max": 100,
+			"step": 10
+		},
+		"ctaAfterDrops": 3
+	},
+	"cta": {
+		"$comment": "target: _self or _blank",
+		"url": "https://www.google.com/",
+		"target": "_self"
+	},
+	"texts": {
+		"logo": "PLINKO",
+		"pinsLabel": "Pins:",
+		"maxWinLabel": "Max win:",
+		"betLabel": "Bet",
+		"popupTitle": "Congratulations!",
+		"popupText": "Ready to continue playing?",
+		"ctaButton": "Download Now"
+	},
+	"dev": {
+		"$comment": "menu: config panel (top right) — edits are saved to this browser only (localStorage); use its Download button and replace this file to publish. watch: poll this file and re-render open pages when it changes (off in production: one request every watchInterval ms per page).",
+		"watch": false,
+		"watchInterval": 1500,
+		"menu": true
+	}
+}
